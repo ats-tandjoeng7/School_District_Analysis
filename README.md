@@ -46,7 +46,7 @@ Let us assess our results and summary that meet the requirements of each deliver
 All data collection, preparation and verification steps are properly done by using `os.path.join()`, `pd.read_csv()`, etc. In Module 4 assignment, we imported student data as a pandas DataFrame. A few examples that might be unique when preparing and cleaning the data are summarized below.
 
 - After data cleaning steps, I copied the original `student_df` DataFrame as `cln_df`, a step that may be different from others'. I then crunched the clean version of the DataFrame based on `cln_df`. This allowed me to save the clean datasets and validate the accuracy of our data manipulation steps when necessary.
-- Added a few checkpoints for making sure every step was accurately performed. I mainly used `display()` for printing the analysis reaults.
+- Added a few checkpoints for making sure every step was accurately performed. I mainly used `display()` for printing the analysis results.
   - 2847 lines containing at least one null were removed.
   - 1836 duplicated rows were trimmed.
 
@@ -66,7 +66,7 @@ cln_df['grade'] = cln_df['grade'].astype(np.int64)
 The average math score for all students was **64.67573326141189**, which matched with the statistics displayed by `describe()`. We calculated the max reading and min reading scores by applying `max()` and `min()` functions, and stored the max_reading_score as well as min_reading_score (**10.5**) values for later use.
 
 ### Deliverable 4 Summary
-We applied either `loc` or `iloc` functions to analyze specific subsets based on certain condition(s). We also used boolean operators, like `&`, `|`, or `~`, to filter, index or slice, and select or group specific subsets. We were able to analyze all the required datasets and our results matched well with the reference data.
+We applied either `loc` or `iloc` functions to analyze specific subsets based on certain condition(s). We also used Boolean operators, like `&`, `|`, or `~`, to filter, index or slice, and select or group specific subsets. We were able to analyze all the required datasets and our results matched well with the reference data.
 
 The mean reading score for all students in grades 11 and 12 combined was **74.900381**. I adopted a simplified conditional statement after verifying that there were no grades beyond grade 12<sup>th</sup> in our datasets.
 
