@@ -79,9 +79,9 @@ ave_reading_score_gr1112
 ### Deliverable 5 Summary
 Since we noticed two conflicting versions of deliverables, I printed reading and math scores in addition to the requested school budget by school type altogether. To assure our results, I also used `loc` along with conditional statements to reconfirm that our data and calculation were solid. Now I feel comfortable providing whatever data immediately that the chief data scientist for a city school district may further inquire.
 
-- Average test scores and school funding per school type are shown in **Table 1**.
-- Average test scores and school funding by grade level are displayed in **Table 2** for comparison purposes.
-- To align with the best practice approach, school budget is rounded to the nearest whole cent in both tables by applying extra `map()` formatting.
+- Average test scores and school funding per school type are shown in **Table 1**. Overall test scores were slightly higher for Charter schools in general even though they received lower funding.
+- Average test scores and school funding by grade level are displayed in **Table 2** for comparison purposes. Math scores were in decreasing trends as grades moved from lower to higher.
+- To align with the best practice approach, school budget was rounded to the nearest whole cent in both tables by applying extra `map()` formatting.
 
 <b>Table 1. Average Test Scores and Funding by School Type</b>
 
@@ -99,13 +99,13 @@ Since we noticed two conflicting versions of deliverables, I printed reading and
 | 11    | 77.478417     | 64.204911  | \$885,658.60  |
 | 12    | 72.245103     | 62.283795  | \$891,797.76  |
 
-The total number of students per school in descending order was calculated by using `groupby`, `count`, and `sort_values` as shown in the following short code. To retain the clean DataFrame, I added a column named *student_count*, which contained an exact copy of student counts from column *student_id*  (**Table 3**).
+The total number of students per school in descending order was calculated by using `groupby`, `count`, and `sort_values` as shown in the following short code. To retain the clean DataFrame, I added a column named *student_count*, which contained an exact copy of student counts from column *student_id* or any existing column besides *school_name* (**Table 3**).
 
 ```
 # Use the `groupby`, `count`, and `sort_values` functions to find the
 # total number of students at each school and sort from most students to least students.
 count_by_school = cln_df.groupby('school_name').count()
-count_by_school['student_count'] = cln_df.groupby('school_name').count()['student_id']
+count_by_school['student_count'] = count_by_school['student_id']
 count_by_school.loc[:, ['student_count']].sort_values(by='student_count', ascending = False)
 ```
 
